@@ -4,18 +4,18 @@
 class Post_Management_Admin_Menu{
 
     public function __construct () {
-       add_action( 'admin_menu', [ $this, 'admin_menu' ] );
+       add_action ( 'admin_menu', [ $this, 'admin_menu' ] );
     }
 
     public function admin_menu () {
-        add_menu_page( 'Post Management', 'Post Management', 'manage_options', 'post-managements', array ( $this,'post_management_menu' ), 'dashicons-chart-pie', 2 );
+        add_menu_page ( 'Post Management', 'Post Management', 'manage_options', 'post-managements', array ( $this,'post_management_menu' ), 'dashicons-chart-pie', 2 );
     }
 
     public function post_management_menu () {
 
         // Check if a category ID is set and get its value
         if ( isset ( $_GET[ 'category-id' ] ) ) {
-            $selected_category_id = intval( $_GET [ 'category-id' ] );
+            $selected_category_id = intval ( $_GET [ 'category-id' ] );
         } else {
             $selected_category_id = -1;
         }
@@ -44,13 +44,13 @@ class Post_Management_Admin_Menu{
         }
 
         // Execute the query
-        $query = new WP_Query( $post_args );
+        $query      = new WP_Query ( $post_args );
 
         // Get all authors
-        $authors = get_users( array ( 'role__in' => array ( 'author', 'administrator', 'editor', 'contributor' ) ) );
+        $authors    = get_users( array ( 'role__in' => array ( 'author', 'administrator', 'editor', 'contributor' ) ) );
 
         // Get all categories
-        $categories = get_categories();
+        $categories = get_categories ();
 
         // Call the post-menu-markup file
         require_once __DIR__ . '/templates/post-menu-markup.php';
