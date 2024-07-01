@@ -29,8 +29,8 @@ class Post_Management_Admin_Menu{
 
     // Set up post query arguments
     $post_args = array (
-        'posts_per_page' => -1, // Get all posts
-        'post_type' => 'post',
+        'posts_per_page'    => -1, // Get all posts
+        'post_type'         => 'post',
     );
 
     // Modify query if a specific category is selected
@@ -40,7 +40,7 @@ class Post_Management_Admin_Menu{
 
     // Modify query if a specific author is selected
     if ( $selected_author_id != -1 ) {
-        $post_args[ 'author' ] = $selected_author_id;
+        $post_args [ 'author' ] = $selected_author_id;
     }
 
     // Execute the query
