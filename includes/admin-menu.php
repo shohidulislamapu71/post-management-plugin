@@ -8,7 +8,7 @@ class Post_Management_Admin_Menu{
     }
 
     public function admin_menu () {
-        add_menu_page( 'Post Management', 'Post Management', 'manage_options', 'post-managements', array($this,'post_management_menu'), 'dashicons-chart-pie', 2 );
+        add_menu_page( 'Post Management', 'Post Management', 'manage_options', 'post-managements', array ( $this,'post_management_menu' ), 'dashicons-chart-pie', 2 );
     }
 
     public function post_management_menu () {
