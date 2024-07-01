@@ -1,10 +1,10 @@
 <?php
 /**
- * Plugin Name: weDevs Academy WP Plugin Batch 2
- * Description: This is the plugin for learning purpose.
+ * Plugin Name: Post Managesment Plugin
+ * Description: This is the plugin for Partics purpose.
 */
 
-class weDevs_Academy_WP_Plugin {
+class post_managesment_plugin {
 
 	private static $instance;
 
@@ -23,8 +23,8 @@ class weDevs_Academy_WP_Plugin {
 	private function require_classes() {
 		require_once __DIR__ . '/includes/admin-menu.php';
 
-		new weDevs_Academy_WP_Plugin_Admin_Menu();
+		new Post_Management_Admin_Menu();
 	}
 }
 
-weDevs_Academy_WP_Plugin::get_instance();
+post_managesment_plugin::get_instance();

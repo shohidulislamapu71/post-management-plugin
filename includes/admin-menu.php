@@ -68,18 +68,4 @@ class weDevs_Academy_WP_Plugin_Admin_Menu{
     
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ?>
