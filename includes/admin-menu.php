@@ -65,7 +65,10 @@ class weDevs_Academy_WP_Plugin_Admin_Menu{
 
     }
     
-    
 }
+<<<<<<< HEAD
 
 ?>
+=======
+?>
+>>>>>>> b6257bb4c41899d6e815628150659bd1929481a5
