@@ -44,13 +44,13 @@ class Post_Management_Admin_Menu{
         }
 
         // Execute the query
-        $query      = new WP_Query ( $post_args );
+        $query      = new WP_Query( $post_args );
 
         // Get all authors
         $authors    = get_users( array ( 'role__in' => array ( 'author', 'administrator', 'editor', 'contributor' ) ) );
 
         // Get all categories
-        $categories = get_categories ();
+        $categories = get_categories();
 
         // Call the post-menu-markup file
         require_once __DIR__ . '/templates/post-menu-markup.php';
