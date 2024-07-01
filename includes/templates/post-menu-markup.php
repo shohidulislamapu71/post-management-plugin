@@ -6,19 +6,19 @@
                     <input type="hidden" name="page" value="post-managements">
                     <label for="category-selector" class="screen-reader-text">All Categories</label>
                     <select name="category-id" id="category-selector">
-                        <option value="-1" <?php selected( '-1', $selected_category_id ); ?>>All Categories</option>
-                        <?php foreach ($categories as $category) : ?>
-                            <option value="<?php echo esc_attr($category->term_id); ?>" <?php selected($category->term_id, $selected_category_id); ?>>
-                                <?php echo esc_html($category->name); ?>
+                        <option value="-1" <?php selected ( '-1', $selected_category_id ); ?>>All Categories</option>
+                        <?php foreach ( $categories as $category ) : ?>
+                            <option value="<?php echo esc_attr( $category->term_id ); ?>" <?php selected ( $category->term_id, $selected_category_id ); ?>>
+                                <?php echo esc_html ( $category->name ); ?>
                             </option>
                         <?php endforeach; ?>
                     </select>
                     <label for="author-selector" class="screen-reader-text">All Authors</label>
                     <select name="author-id" id="author-selector">
                         <option value="-1" <?php selected( '-1', $selected_author_id ); ?>>All Authors</option>
-                        <?php foreach ($authors as $author) : ?>
-                            <option value="<?php echo esc_attr($author->ID); ?>" <?php selected($author->ID, $selected_author_id); ?>>
-                                <?php echo esc_html($author->display_name); ?>
+                        <?php foreach ( $authors as $author ) : ?>
+                            <option value="<?php echo esc_attr ( $author->ID ); ?>" <?php selected ( $author->ID, $selected_author_id ); ?>>
+                                <?php echo esc_html ( $author->display_name ); ?>
                             </option>
                         <?php endforeach; ?>
                     </select>
@@ -36,19 +36,19 @@
             </thead>
             <tbody>
                 <?php 
-                if ($query->have_posts()) :
-                    while ($query->have_posts()) : $query->the_post();
+                if ( $query->have_posts() ) :
+                    while ( $query->have_posts() ) : $query->the_post();
                         $author = get_the_author();
                         $post_categories = get_the_category();
-                        $category_names = wp_list_pluck($post_categories, 'name');
+                        $category_names = wp_list_pluck( $post_categories, 'name' );
                 ?>
                 <tr>
                     <td><?php the_title(); ?></td>
-                    <td><?php echo esc_html($author); ?></td>
-                    <td><?php echo esc_html(implode(', ', $category_names)); ?></td>
+                    <td><?php echo esc_html( $author ); ?></td>
+                    <td><?php echo esc_html( implode( ', ', $category_names ) ); ?></td>
                 </tr>
                 <?php 
-                    endwhile; 
+                endwhile;
                 else : 
                 ?>
                 <tr>

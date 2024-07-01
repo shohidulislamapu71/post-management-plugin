@@ -8,7 +8,7 @@ class post_managesment_plugin {
 
 	private static $instance;
 
-	public static function get_instance() {
+	public static function get_instance () {
 		if ( ! self::$instance ) {
 			self::$instance = new self();
 		}
@@ -22,7 +22,6 @@ class post_managesment_plugin {
 
 	private function require_classes() {
 		require_once __DIR__ . '/includes/admin-menu.php';
-
 		new Post_Management_Admin_Menu();
 	}
 }
