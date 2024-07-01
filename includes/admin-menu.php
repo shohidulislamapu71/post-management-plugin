@@ -3,7 +3,7 @@
 
 class Post_Management_Admin_Menu{
 
-    public function __construct() {
+    public function __construct () {
        add_action( 'admin_menu', [ $this, 'admin_menu' ] );
     }
 
